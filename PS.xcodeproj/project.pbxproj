@@ -240,6 +240,7 @@
 		93B25628279EB37100BF866A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -249,6 +250,7 @@
 		93B25629279EB37100BF866A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				PRODUCT_NAME = "$(TARGET_NAME)";
