@@ -24,6 +24,7 @@ PS/main.cpp
 clear.sh
 CMakeLists.txt
 PS.xcodeproj/
+코딩테스트/
 
 # Created by https://www.toptal.com/developers/gitignore/api/clion
 # Edit at https://www.toptal.com/developers/gitignore?templates=clion
