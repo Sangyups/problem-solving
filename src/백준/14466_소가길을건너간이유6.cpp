@@ -71,23 +71,13 @@ void bfs(pii start, pii goal) {
   }
 }
 
-void get_comb(int i, int cnt) {
-  if (cnt == 2) {
-    bfs(cow[comb[0]], cow[comb[1]]);
-    return;
-  }
-
-  if (i == K) return;
-
-  comb[cnt] = i;
-  get_comb(i + 1, cnt + 1);
-  comb[cnt] = -1;
-  get_comb(i + 1, cnt);
-}
-
 void solution() {
   int MAX_PAIR = K * (K - 1) / 2;
-  get_comb(0, 0);
+  for (int i = 0; i < K; ++i) {
+    for (int j = i + 1; j < K; ++j) {
+      bfs(cow[i], cow[j]);
+    }
+  }
 
   cout << MAX_PAIR - cnt;
 }
