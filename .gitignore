@@ -21,8 +21,6 @@ xcuserdata/
 # End of https://www.toptal.com/developers/gitignore/api/xcode
 
 PS/main.cpp
-clear.sh
-CMakeLists.txt
 PS.xcodeproj/
 코딩테스트/
 
