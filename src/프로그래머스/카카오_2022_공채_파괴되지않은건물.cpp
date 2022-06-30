@@ -8,7 +8,7 @@ int damage[1001][1001];
 int solution(vector<vector<int>> board, vector<vector<int>> skill) {
   int answer = 0;
 
-  for (auto s: skill) {
+  for (auto s : skill) {
     if (s[0] == 1) s[5] = -s[5];
     damage[s[1]][s[2]] += s[5];
     damage[s[1]][s[4] + 1] -= s[5];

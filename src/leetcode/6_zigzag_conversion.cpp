@@ -4,7 +4,7 @@ class Solution {
     if (numRows == 1) {
       return s;
     }
-
+    
     string answer = "";
     int N = s.size();
     int total_gap = numRows * 2 - 2;

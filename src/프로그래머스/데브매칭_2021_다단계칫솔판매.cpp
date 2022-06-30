@@ -27,6 +27,6 @@ vector<int> solution(vector<string> enroll, vector<string> referral, vector<stri
       person = parent[person];
     }
   }
-
+  
   return answer;
 }

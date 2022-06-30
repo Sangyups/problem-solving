@@ -19,7 +19,7 @@ vector<int> solution(vector<int> lottos, vector<int> win_nums) {
   vector<int> answer;
   int zeros = 0;
   int correct = 0;
-  for (auto num: lottos) {
+  for (auto num : lottos) {
     if (!num) {
       zeros++;
       continue;

@@ -17,7 +17,7 @@ class Solution {
 
   vector<string> generateParenthesis(int n) {
     solution(n, n, "");
-
+    
     return answer;
   }
 };

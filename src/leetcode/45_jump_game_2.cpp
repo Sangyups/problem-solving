@@ -12,7 +12,7 @@ class Solution {
         curr_max = next_max;
       }
     }
-
+    
     return cnt;
   }
 };

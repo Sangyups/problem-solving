@@ -28,7 +28,7 @@ class Solution {
         }
       }
     }
-
+    
     for (int i = start; i <= end; ++i) {
       ans += s[i];
     }

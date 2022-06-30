@@ -55,7 +55,7 @@ vector<int> solution(int rows, int cols, vector<vector<int>> queries) {
     }
   }
 
-  for (auto query: queries) {
+  for (auto query : queries) {
     answer.push_back(rotate_matrix(query));
   }
 
