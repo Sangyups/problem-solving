@@ -22,14 +22,14 @@ do
   read number
 done
 
-mkdir -p ./src/${site} && cp ./PS/main.cpp ./src/${site}/${prob}.cpp
+mkdir -p ./src/${site} && cp ./main.cpp ./src/${site}/${prob}.cpp
 echo "src/${site}/${prob}.cpp에 저장되었습니다."
 git add ./src/${site}/${prob}.cpp
 git commit -m "${site}_${prob}.cpp"
 git push origin main
 echo "${site}/${prob}.cpp 파일 커밋이 완료되었습니다."
 
-cat > ./PS/main.cpp << EOF
+cat > ./main.cpp << EOF
 #include <iostream>
 #include <vector>
 #include <string>
