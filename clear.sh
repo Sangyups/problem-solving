@@ -42,7 +42,10 @@ typedef long long ll;
 
 using namespace std;
 
-void preproc() {
+void clean_up() {
+}
+
+void pre_proc() {
 }
 
 void solution() {
@@ -52,7 +55,8 @@ int main() {
   cin.tie(nullptr);
   ios::sync_with_stdio(false);
 
-  preproc();
+  clean_up();
+  pre_proc();
   solution();
 }
 EOF
