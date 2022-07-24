@@ -1,7 +1,7 @@
 #!/bin/bash
 
 number='2'
-while [ $number = '2' ]
+while [ $number != '1' ]
 do
   echo "문제 정보를 입력해주세요."
   read prob
@@ -12,7 +12,7 @@ do
 done
 
 number='2'
-while [ $number = '2' ]
+while [ $number != '1' ]
 do
   echo "출처 사이트를 입력해주세요."
   read site
