@@ -1,8 +1,5 @@
 cat > ./main.cpp << EOF
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 #define endl '\n'
 #define pii pair<int, int>
