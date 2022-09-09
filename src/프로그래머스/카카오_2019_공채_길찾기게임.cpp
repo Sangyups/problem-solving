@@ -18,8 +18,7 @@ struct Node {
   Node *right;
 
   Node(int data, int x, int y, Node *left, Node *right)
-      : data(data), x(x), y(y), left(left), right(right) {
-  }
+      : data(data), x(x), y(y), left(left), right(right) {}
 
   bool operator<(const Node &rhs) const {
     if (y == rhs.y) return x < rhs.x;
