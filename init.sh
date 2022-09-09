@@ -2,11 +2,10 @@ cat > ./main.cpp << EOF
 #include <bits/stdc++.h>
 
 #define endl '\n'
-#define pii pair<int, int>
-
-typedef long long ll;
 
 using namespace std;
+using pii = pair<int, int>;
+using ll = long long;
 
 void clean_up() {
 }
