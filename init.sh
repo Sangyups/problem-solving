@@ -17,12 +17,12 @@ void solution() {
 }
 
 int main() {
-  cin.tie(nullptr);
-  ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
 
-  clean_up();
-  pre_proc();
-  solution();
+    clean_up();
+    pre_proc();
+    solution();
 }
 EOF
 echo "초기화가 완료되었습니다."
