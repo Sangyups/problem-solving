@@ -21,26 +21,26 @@ void clean_up() {}
 void pre_proc() {}
 
 void solution() {
-  arr[1] = 1;
-  for (int i = 2; i <= N; ++i) {
-    arr[i] = 4;
-    int temp = sqrt(i);
-    if (temp * temp == i) arr[i] = 1;
-    for (int j = 1; j * j <= i; ++j) {
-      arr[i] = min(arr[i], arr[j * j] + arr[i - j * j]);
+    arr[1] = 1;
+    for (int i = 2; i <= N; ++i) {
+        arr[i] = 4;
+        int temp = sqrt(i);
+        if (temp * temp == i) arr[i] = 1;
+        for (int j = 1; j * j <= i; ++j) {
+            arr[i] = min(arr[i], arr[j * j] + arr[i - j * j]);
+        }
     }
-  }
 
-  cout << arr[N] << endl;
+    cout << arr[N] << endl;
 }
 
 int main() {
-  cin.tie(nullptr);
-  ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
 
-  cin >> N;
+    cin >> N;
 
-  clean_up();
-  pre_proc();
-  solution();
+    clean_up();
+    pre_proc();
+    solution();
 }

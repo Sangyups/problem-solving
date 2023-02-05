@@ -1,7 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
 #define endl '\n'
 #define pii pair<int, int>
@@ -62,38 +62,38 @@ void pre_proc() {
 }
 
 void solution() {
-  int ans = 0;
-  for (int k = 0; k < 19; ++k) {
-    for (int i = 0; i < N; ++i) {
-      for (int j = 0; j < M; ++j) {
-        int sum = 0;
-        for (int l = 0; l < 4; ++l) {
-          int nx = i + tetro[k][l].first;
-          int ny = j + tetro[k][l].second;
-          if (nx < 0 || nx >= N || ny < 0 || ny >= M) {
-            sum = 0;
-            break;
-          }
-          sum += mat[nx][ny];
+    int ans = 0;
+    for (int k = 0; k < 19; ++k) {
+        for (int i = 0; i < N; ++i) {
+            for (int j = 0; j < M; ++j) {
+                int sum = 0;
+                for (int l = 0; l < 4; ++l) {
+                    int nx = i + tetro[k][l].first;
+                    int ny = j + tetro[k][l].second;
+                    if (nx < 0 || nx >= N || ny < 0 || ny >= M) {
+                        sum = 0;
+                        break;
+                    }
+                    sum += mat[nx][ny];
+                }
+                ans = max(ans, sum);
+            }
         }
-        ans = max(ans, sum);
-      }
     }
-  }
-  cout << ans << endl;
+    cout << ans << endl;
 }
 
 int main() {
-  cin.tie(nullptr);
-  ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
 
-  cin >> N >> M;
-  clean_up();
-  for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < M; ++j) {
-      cin >> mat[i][j];
+    cin >> N >> M;
+    clean_up();
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < M; ++j) {
+            cin >> mat[i][j];
+        }
     }
-  }
-  pre_proc();
-  solution();
+    pre_proc();
+    solution();
 }

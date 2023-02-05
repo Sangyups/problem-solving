@@ -22,51 +22,51 @@ void pre_proc() {
 }
 
 void solution() {
-  int time = 0;
-  int is_changed;
-  do {
-    is_changed = 0;
-    queue<pii> q;
-    fill(&visited[0][0], &visited[N - 1][M], 0);
-    q.push({0, 0});
-    visited[0][0] = 1;
-    while (!q.empty()) {
-      auto [cx, cy] = q.front();
-      q.pop();
-      for (int i = 0; i < 4; ++i) {
-        int nx = cx + dx[i];
-        int ny = cy + dy[i];
-        if (nx < 0 || nx >= N || ny < 0 || ny >= M) continue;
-        if (cheese[nx][ny]) {
-          ++visited[nx][ny];
-          if (visited[nx][ny] == 2) {
-            cheese[nx][ny] = 0;
-            is_changed = 1;
-          }
-          continue;
+    int time = 0;
+    int is_changed;
+    do {
+        is_changed = 0;
+        queue<pii> q;
+        fill(&visited[0][0], &visited[N - 1][M], 0);
+        q.push({0, 0});
+        visited[0][0] = 1;
+        while (!q.empty()) {
+            auto [cx, cy] = q.front();
+            q.pop();
+            for (int i = 0; i < 4; ++i) {
+                int nx = cx + dx[i];
+                int ny = cy + dy[i];
+                if (nx < 0 || nx >= N || ny < 0 || ny >= M) continue;
+                if (cheese[nx][ny]) {
+                    ++visited[nx][ny];
+                    if (visited[nx][ny] == 2) {
+                        cheese[nx][ny] = 0;
+                        is_changed = 1;
+                    }
+                    continue;
+                }
+                if (visited[nx][ny]) continue;
+                visited[nx][ny] = 1;
+                q.push({nx, ny});
+            }
         }
-        if (visited[nx][ny]) continue;
-        visited[nx][ny] = 1;
-        q.push({nx, ny});
-      }
-    }
-    ++time;
-  } while (is_changed);
-  cout << time - 1 << endl;
+        ++time;
+    } while (is_changed);
+    cout << time - 1 << endl;
 }
 
 int main() {
-  cin.tie(nullptr);
-  ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
 
-  cin >> N >> M;
+    cin >> N >> M;
 
-  for (int i = 0; i < N; ++i) {
-    for (int j = 0; j < M; ++j) {
-      cin >> cheese[i][j];
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < M; ++j) {
+            cin >> cheese[i][j];
+        }
     }
-  }
-  clean_up();
-  pre_proc();
-  solution();
+    clean_up();
+    pre_proc();
+    solution();
 }

@@ -1,7 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
 #define endl '\n'
 #define pii pair<int, int>
@@ -17,24 +17,23 @@ void preproc() {
 }
 
 void solution() {
-  int temp = N;
-  int sub = 1;
-  while (temp >= 10) {
-    sub *= 10;
-    temp /= 10;
-  }
-  cout << N - sub << endl;
+    int temp = N;
+    int sub = 1;
+    while (temp >= 10) {
+        sub *= 10;
+        temp /= 10;
+    }
+    cout << N - sub << endl;
 }
 
 int main() {
-  cin.tie(nullptr);
-  ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
 
-  cin >> T;
-  while (T--) {
-    cin >> N;
-    preproc();
-    solution();
-  }
-
+    cin >> T;
+    while (T--) {
+        cin >> N;
+        preproc();
+        solution();
+    }
 }

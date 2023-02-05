@@ -16,26 +16,26 @@ void clean_up() {}
 void pre_proc() {}
 
 void solution() {
-  for (int i = 0; i < M; ++i) {
-    string site;
-    cin >> site;
-    cout << pw_list[site] << endl;
-  }
+    for (int i = 0; i < M; ++i) {
+        string site;
+        cin >> site;
+        cout << pw_list[site] << endl;
+    }
 }
 
 int main() {
-  cin.tie(nullptr);
-  ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
 
-  cin >> N >> M;
+    cin >> N >> M;
 
-  for (int i = 0; i < N; ++i) {
-    string a, b;
-    cin >> a >> b;
-    pw_list.insert({a, b});
-  }
+    for (int i = 0; i < N; ++i) {
+        string a, b;
+        cin >> a >> b;
+        pw_list.insert({a, b});
+    }
 
-  clean_up();
-  pre_proc();
-  solution();
+    clean_up();
+    pre_proc();
+    solution();
 }

@@ -1,7 +1,7 @@
-#include <iostream>
-#include <vector>
-#include <string>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
 #define endl '\n'
 #define pii pair<int, int>
@@ -20,10 +20,10 @@ void solution() {
 }
 
 int main() {
-  cin.tie(nullptr);
-  ios::sync_with_stdio(false);
-  
-  clean_up();
-  pre_proc();
-  solution();
+    cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+
+    clean_up();
+    pre_proc();
+    solution();
 }
