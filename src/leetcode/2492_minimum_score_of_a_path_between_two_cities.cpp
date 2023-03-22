@@ -6,28 +6,25 @@ using pii = pair<int, int>;
 class Solution {
    public:
     vector<pii> graph[MAX];
-    int dist[MAX];
-    int N;
+    int visited[MAX];
+    int ans = INF;
 
-    void dijkstra(int start) {
-        fill(&dist[0], &dist[MAX], INF);
-        priority_queue<pii, vector<pii>, greater<pii>> pq;
-        pq.push({INF, start});
-        dist[start] = INF;
-
-        while (!pq.empty()) {
-            auto [curr_dist, curr] = pq.top();
-            pq.pop();
-
-            if (dist[curr] < curr_dist) continue;
+    void bfs() {
+        queue<int> q;
+        q.push(1);
+        while (!q.empty()) {
+            int curr = q.front();
+            q.pop();
 
             for (auto &neigh : graph[curr]) {
-                auto [next_dist, next_node] = neigh;
-                next_dist = min(next_dist, curr_dist);
-                if (next_dist < dist[next_node]) {
-                    dist[next_node] = next_dist;
-                    pq.push({next_dist, next_node});
+                auto [next_node, dist] = neigh;
+
+                ans = min(ans, dist);
+                if (visited[next_node]) {
+                    continue;
                 }
+                visited[next_node] = 1;
+                q.push(next_node);
             }
         }
     }
@@ -38,12 +35,12 @@ class Solution {
             int y = road[1];
             int w = road[2];
 
-            graph[x].push_back({w, y});
-            graph[y].push_back({w, x});
+            graph[x].push_back({y, w});
+            graph[y].push_back({x, w});
         }
 
-        dijkstra(1);
+        bfs();
 
-        return dist[n];
+        return ans;
     }
 };
