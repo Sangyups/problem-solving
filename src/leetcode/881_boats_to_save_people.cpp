@@ -9,18 +9,11 @@ class Solution {
         int answer = 0;
 
         while (start <= end) {
-            if (start == end) {
-                ++answer;
-                break;
-            }
-            if (people[end] + people[start] > limit) {
-                --end;
-                ++answer;
-            } else {
+            if (people[end] + people[start] <= limit) {
                 ++start;
-                --end;
-                ++answer;
             }
+            --end;
+            ++answer;
         }
 
         return answer;
