@@ -1,28 +1,17 @@
-cat > ./main.cpp << EOF
-#include <bits/stdc++.h>
+cat > ./main.go << EOF
+package main
 
-#define endl '\n'
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
-using namespace std;
-using pii = pair<int, int>;
-using ll = long long;
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+	writer := bufio.NewWriter(os.Stdout)
+	defer writer.Flush()
 
-void clean_up() {
-}
-
-void pre_proc() {
-}
-
-void solution() {
-}
-
-int main() {
-    cin.tie(nullptr);
-    ios::sync_with_stdio(false);
-
-    clean_up();
-    pre_proc();
-    solution();
 }
 EOF
 echo "초기화가 완료되었습니다."
