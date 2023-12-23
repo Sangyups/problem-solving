@@ -23,7 +23,7 @@ xcuserdata/
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode
 
-main.cpp
+main.*
 PS.xcodeproj/
 코딩테스트/
 
