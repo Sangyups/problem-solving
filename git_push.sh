@@ -1,37 +1,29 @@
 #!/bin/bash
 
-number='2'
-while [ $number != '1' ]
-do
-  echo "문제 정보를 입력해주세요."
-  read prob
+ask_and_confirm() {
+    local question="$1"
+    local response
+    local confirm
 
-  echo "$prob 이(가) 맞습니까?"
-  echo "[1: 예 / 2: 아니오]"
-  read number
-done
+    while true; do
+        # Ask the question
+        read -r -p "$question " response
 
-number='2'
-while [ $number != '1' ]
-do
-  echo "언어 종류를 입력해주세요."
-  read lang
+        # Confirm the answer
+        read -r -p "'$response' 가 맞습니까? ([y]/n) " confirm
+        confirm=${confirm:-y}
 
-  echo "$lang 이(가) 맞습니까?"
-  echo "[1: 예 / 2: 아니오]"
-  read number
-done
+        if [[ "$confirm" =~ ^[Yy]$ ]]; then
+            break
+        fi
+    done
 
-number='2'
-while [ $number != '1' ]
-do
-  echo "출처 사이트를 입력해주세요."
-  read site
+    echo "$response"
+}
 
-  echo "$site 이(가) 맞습니까?"
-  echo "[1: 예 / 2: 아니오]"
-  read number
-done
+prob=$(ask_and_confirm "문제 정보를 입력해주세요: ")
+lang=$(ask_and_confirm "언어 종류를 입력해주세요: ")
+site=$(ask_and_confirm "출처 사이트를 입력해주세요: ")
 
 mkdir -p ./src/${site} && cp ./main.${lang} ./src/${site}/${prob}.${lang}
 echo "src/${site}/${prob}.${lang}에 저장되었습니다."
@@ -41,4 +33,3 @@ git push origin main
 echo "${site}/${prob}.${lang} 파일 커밋이 완료되었습니다."
 
 sh init.sh
-
