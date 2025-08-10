@@ -1,0 +1,6 @@
+[
+  {
+    "label": "Compile and Run C++",
+    "command": "make run"
+  }
+]
