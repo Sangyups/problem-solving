@@ -14,6 +14,7 @@ cat > ./main.cpp << EOF
 using namespace std;
 
 using pii = pair<int, int>;
+using vvi = vector<vector<int>>;
 using ll = long long;
 
 void solution() {
