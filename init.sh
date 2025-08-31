@@ -1,4 +1,4 @@
-cat > ./main.cpp << EOF
+cat > ./main.cpp << 'EOF'
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -10,15 +10,15 @@ constexpr bool local = true;
 #else
 constexpr bool local = false;
 #endif
-#define debug(x)                                           \
-    if constexpr (local) {                                 \
-        std::cout << "[DEBUG] " << #x << ": " << x << '\n' \
+#define debug(x)                                            \
+    if constexpr (local) {                                  \
+        std::cout << "[DEBUG] " << #x << ": " << x << endl; \
     }
 #define debugall(c)                                           \
     if constexpr (local) {                                    \
         std::cout << "[DEBUG] " << #c << ": ";                \
-        for (const auto& elem : c) std::cout << elem << ", "; \
-        std::cout << '\n';                                    \
+        for (const auto &elem : c) std::cout << elem << ", "; \
+        std::cout << endl;                                    \
     }
 
 using namespace std;
