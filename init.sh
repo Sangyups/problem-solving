@@ -6,10 +6,20 @@ cat > ./main.cpp << EOF
 #define endl '\n'
 
 #ifdef LOCAL
-#define debug(x) std::cout << "[DEBUG] " << #x << ": " << x << '\n'
+constexpr bool local = true;
 #else
-#define debug(x)
+constexpr bool local = false;
 #endif
+#define debug(x)                                           \
+    if constexpr (local) {                                 \
+        std::cout << "[DEBUG] " << #x << ": " << x << '\n' \
+    }
+#define debugall(c)                                           \
+    if constexpr (local) {                                    \
+        std::cout << "[DEBUG] " << #c << ": ";                \
+        for (const auto& elem : c) std::cout << elem << ", "; \
+        std::cout << '\n';                                    \
+    }
 
 using namespace std;
 
@@ -24,10 +34,10 @@ int main() {
     cin.tie(nullptr);
     ios::sync_with_stdio(false);
 
-#ifdef LOCAL
-    cout << "#### INPUT ####" << endl;
-    cout.flush();
-#endif
+    if constexpr (local) {
+        cout << "#### INPUT ####" << endl;
+        cout.flush();
+    }
 
     ////////////////////////////////////
     // THIS IS WHERE YOU HANDLE INPUT //
@@ -37,10 +47,10 @@ int main() {
     ////////////////////////////////////
     ////////////////////////////////////
 
-#ifdef LOCAL
-    cout << "#### OUTPUT ####" << endl;
-    cout.flush();
-#endif
+    if constexpr (local) {
+        cout << "#### OUTPUT ####" << endl;
+        cout.flush();
+    }
 
     solution();
 }
