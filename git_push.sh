@@ -7,10 +7,10 @@ ask_and_confirm() {
 
     while true; do
         # Ask the question
-        read -r -p "$question " response
+        read -e -r -p "$question " response
 
         # Confirm the answer
-        read -r -p "'$response' (이)가 맞습니까? ([y]/n) " confirm
+        read -e -r -p "'$response' (이)가 맞습니까? ([y]/n) " confirm
         confirm=${confirm:-y}
 
         if [[ "$confirm" =~ ^[Yy]$ ]]; then
